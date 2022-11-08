@@ -3,6 +3,12 @@
         "title":"Breakfast Package",
         "img":"https://thebigmansworld.com/wp-content/uploads/2022/01/healthy-breakfast-recipes.jpeg",
         "price":"250-500 BDT",
+        "time":"8am-10am",
+        "delivery":"Within 40min",
+        "chef":{
+            "name":"Sanjina Najifa",
+            "img":"https://img.freepik.com/premium-photo/beautiful-young-asian-woman-chef_65293-7036.jpg?w=2000"
+        },
         "details":{
             "des":"Here are the breakfast packages for your friends and family in Dhaka. This ingrediens we collect from kings and agora super mall. This food  package  delivery in Dhaka is available for Breakfast(8am-10am) time. If you need this  package for more than the mention person people, please select the quantity before adding this product to your shopping basket if you select 2 then all item are going double. Order one day before your required delivery time.",
             "pack1":"This package is for 3 people has:3 Omletes,1 Packet of breads,Special Milky Drink of 3 mugs. Price is 250 BDT",
@@ -15,6 +21,12 @@
         "title":"Lunch Package",
         "img":"https://media.istockphoto.com/id/1317535161/photo/table-full-of-food-for-family-top-view.jpg?s=612x612&w=0&k=20&c=lA-14Isxb0EtTDCyi8xyGomviteA8lL8CFhxWdUQzvI=",
         "price":"500-1000 BDT",
+        "time":"12pm-3pm",
+        "delivery":"Within 40min",
+        "chef":{
+            "name":"Sanjina Najifa",
+            "img":"https://img.freepik.com/premium-photo/beautiful-young-asian-woman-chef_65293-7036.jpg?w=2000"
+        },
         "details":{
             "des":"Here are the lunch packages for your friends and family in Dhaka. This ingrediens we collect from kings and agora super mall. This food  package  delivery in Dhaka is available for Lunch(12pm-3pm) time. If you need this  package for more than the mention person people, please select the quantity before adding this product to your shopping basket if you select 2 then all item are going double. Order one day before your required delivery time.",
             "pack1":"This package is for 3 people has:3 plates of Khichuri,3 bolws of chicken curry,Special vegtable curry,lentils soup. Price is 500 BDT",
@@ -27,6 +39,12 @@
         "title":"Dinner Package",
         "img":"https://hindi.cdn.zeenews.com/hindi/sites/default/files/styles/zm_700x400/public/2022/09/03/1301161-dinner.jpg?itok=UPlHWW99",
         "price":"500-1000 BDT",
+        "time":"8pm-10:30pm",
+        "delivery":"Within 40min",
+        "chef":{
+            "name":"Sanjina Najifa",
+            "img":"https://img.freepik.com/premium-photo/beautiful-young-asian-woman-chef_65293-7036.jpg?w=2000"
+        },
         "details":{
             "des":"Here are the dinner packages for your friends and family in Dhaka. This ingrediens we collect from kings and agora super mall. This food  package  delivery in Dhaka is available for dinner(8pm-10:30pm) time. If you need this  package for more than the mention person people, please select the quantity before adding this product to your shopping basket if you select 2 then all item are going double. Order one day before your required delivery time.",
             "pack1":"This package is for 3 people has:3 plates of Khichuri,3 bolws of chicken curry,Special vegtable curry,lentils soup. Price is 500 BDT",
@@ -39,6 +57,12 @@
         "title":"Dessert Package",
         "img":"https://slimmingviolet.com/wp-content/uploads/2021/09/red-velvet-cake.png",
         "price":"500-1000 BDT",
+        "time":"10am-10:30pm",
+        "delivery":"Within 40min",
+        "chef":{
+            "name":"Sanjina Najifa",
+            "img":"https://img.freepik.com/premium-photo/beautiful-young-asian-woman-chef_65293-7036.jpg?w=2000"
+        },
         "details":{
             "des":"Here are the dessert packages for your friends and family in Dhaka. This ingrediens we collect from kings and agora super mall. This food  package  delivery in Dhaka is available for (10am-10:30pm) . If you need this  package for more than the mention person people, please select the quantity before adding this product to your shopping basket if you select 2 then all item are going double. Order one day before your required delivery time.",
             "pack1":"This package is for 3 people has:2.5 pound of chocolate cake,4 pancakes. Price is 500 BDT",
@@ -51,6 +75,12 @@
         "title":"Fast Food Package",
         "img":"https://redcliffelabs.com/myhealth/wp-content/uploads/2022/03/90-1200x900.jpg",
         "price":"500-1000 BDT",
+        "time":"10am-10:30pm",
+        "delivery":"Within 40min",
+        "chef":{
+            "name":"Sanjina Najifa",
+            "img":"https://img.freepik.com/premium-photo/beautiful-young-asian-woman-chef_65293-7036.jpg?w=2000"
+        },
         "details":{
             "des":"Here are the dessert packages for your friends and family in Dhaka. This ingrediens we collect from kings and agora super mall. This food  package  delivery in Dhaka is available for (10am-10:30pm) . If you need this  package for more than the mention person people, please select the quantity before adding this product to your shopping basket if you select 2 then all item are going double. Order one day before your required delivery time.",
             "pack1":"This package is for 3 people has:3 burger with extra cheese,3 cups of soft drinks,3 packs of french fries. Price is 500 BDT",
@@ -63,6 +93,12 @@
         "title":"Bakery Package",
         "img":"https://www.bakingbusiness.com/ext/resources/2020/7/AdobeStock_109575100.jpg?t=1595952305&width=1080",
         "price":"300-800 BDT",
+        "time":"10am-10:30pm",
+        "delivery":"Within 40min",
+        "chef":{
+            "name":"Sanjina Najifa",
+            "img":"https://img.freepik.com/premium-photo/beautiful-young-asian-woman-chef_65293-7036.jpg?w=2000"
+        },
         "details":{
             "des":"Here are the dessert packages for your friends and family in Dhaka. This ingrediens we collect from kings and agora super mall. This food  package  delivery in Dhaka is available for (10am-10:30pm) . If you need this  package for more than the mention person people, please select the quantity before adding this product to your shopping basket if you select 2 then all item are going double. Order one day before your required delivery time.",
             "pack1":"This package is for 3 people has:3 doughnuts,3 cups of soft drinks,3 packs of toast(per pack of 10 pieces). Price is 500 BDT",
