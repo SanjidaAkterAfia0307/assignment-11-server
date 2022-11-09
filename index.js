@@ -14,9 +14,13 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run(){
     try{
         const serviceCollection=client.db("foodie").collection("services")
+        const reviewCollection=client.db("foodie").collection("reviews")
+
+
+
         app.get("/services",async(req,res)=>{
           const count=parseInt(req.query.count);
-          console.log(count)
+          // console.log(count)
           if(count){
 
             const query={}
@@ -40,6 +44,61 @@ async function run(){
 
           const service = await serviceCollection.findOne(query)
           res.send(service)
+        })
+
+        app.get("/reviews",async(req,res)=>{
+          let query={};
+          // console.log(req.query.service)
+          if (req.query.service) {
+            query = {
+                service: req.query.service
+            }
+        }
+          if (req.query.name) {
+            query = {
+                name: req.query.name
+            }
+        }
+        
+          const cursor= reviewCollection.find(query).sort({date:-1})
+          const reviews= await cursor.toArray()
+          res.send(reviews)
+        })
+       
+        app.post("/reviews",async(req,res)=>{
+          const review=req.body;
+          const date =new Date(Date.now())
+          
+          console.log(review)
+          // console.log(date)
+
+          const result=await reviewCollection.insertOne(review)
+          res.send(result)
+        })
+
+        app.delete("/reviews/:id",async(req,res)=>{
+          const id=req.params.id
+          console.log(id)
+
+          const query={_id:ObjectId(id)}
+          const reviews=await reviewCollection.deleteOne(query)
+          res.send(reviews)
+
+        })
+        app.patch("/reviews/:id",async(req,res)=>{
+          const id=req.params.id
+          console.log(id)
+          const status = req.body.upValue
+          console.log(status)
+          const query = { _id: ObjectId(id) }
+          const updatedDoc = {
+              $set:{
+                  description: status
+              }
+          }
+          const result = await reviewCollection.updateOne(query, updatedDoc);
+          res.send(result);
+
         })
     }
     finally{
