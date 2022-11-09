@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const jwt = require('jsonwebtoken');
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const app = express()
 const port = process.env.PORT || 5000 
@@ -11,11 +12,38 @@ app.use(express.json())
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.3jlrk4o.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
+function verifyJWT(req, res, next){
+  const authHeader = req.headers.authorization;
+  console.log(authHeader)
+
+  if(!authHeader){
+      return res.status(401).send({message: 'unauthorized access'});
+  }
+  const token = authHeader.split(' ')[1];
+
+  jwt.verify(token, process.env.TOKEN, function(err, decoded){
+      if(err){
+          return res.status(403).send({message: 'Forbidden access'});
+      }
+      req.decoded = decoded;
+      next();
+  })
+}
+
+
 async function run(){
     try{
         const serviceCollection=client.db("foodie").collection("services")
         const reviewCollection=client.db("foodie").collection("reviews")
 
+
+
+        app.post('/jwt', (req, res) =>{
+          const user = req.body;
+          const token = jwt.sign(user, process.env.TOKEN, { expiresIn: '1d'})
+          res.send({token})
+      }) 
 
 
         app.get("/services",async(req,res)=>{
@@ -36,7 +64,7 @@ async function run(){
 
           }
         })
-        app.post("/services",async(req,res)=>{
+        app.post("/services", async(req,res)=>{
           const service=req.body;
 
           console.log(service)
@@ -84,7 +112,7 @@ async function run(){
           res.send(result)
         })
 
-        app.delete("/reviews/:id",async(req,res)=>{
+        app.delete("/reviews/:id",verifyJWT,async(req,res)=>{
           const id=req.params.id
           console.log(id)
 
@@ -93,7 +121,7 @@ async function run(){
           res.send(reviews)
 
         })
-        app.patch("/reviews/:id",async(req,res)=>{
+        app.patch("/reviews/:id",verifyJWT,async(req,res)=>{
           const id=req.params.id
           console.log(id)
           const status = req.body.upValue
