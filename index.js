@@ -82,7 +82,7 @@ async function run(){
           res.send(service)
         })
 
-        app.get("/reviews",async(req,res)=>{
+        app.get("/myreviews",verifyJWT,async(req,res)=>{
           let query={};
           // console.log(req.query.service)
           if (req.query.service) {
@@ -96,6 +96,19 @@ async function run(){
             }
         }
         
+          const cursor= reviewCollection.find(query).sort({date:-1})
+          const reviews= await cursor.toArray()
+          res.send(reviews)
+        })
+        app.get("/reviews",async(req,res)=>{
+          let query={};
+          // console.log(req.query.service)
+          if (req.query.service) {
+            query = {
+                service: req.query.service
+            }
+        }
+          
           const cursor= reviewCollection.find(query).sort({date:-1})
           const reviews= await cursor.toArray()
           res.send(reviews)
